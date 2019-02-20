@@ -19,10 +19,10 @@ class UsersRepository {
         }
     }
 
-    fun getUserLocations(): Single<Map<User, Location>> {
+    fun getUserLocations(): Single<List<Pair<User, Location>>> {
         return Single.defer {
             Single.just(
-                mapOf(
+                listOf(
                     User("Name1", "1") to Location(50.0, 50.0),
                     User("Mame1", "2") to Location(150.0, 90.0),
                     User("Bame1", "3") to Location(50.0, 90.0),
